@@ -55,7 +55,7 @@ namespace HealthCalcPack.O3.Implementations
 
             return Imc switch
             {
-                < MAGREZA_FAIXA1 => MAGREZA,
+                > 0 and < MAGREZA_FAIXA1 => MAGREZA,
                 > NORMAL_FAIXA1 and < NORMAL_FAIXA2 => NORMAL,
                 > SOBREPESO_FAIXA1 and < SOBREPESO_FAIXA2 => SOBREPESO,
                 > OBESIDADE_FAIXA1 and < OBESIDADE_FAIXA2 => OBESIDADE,

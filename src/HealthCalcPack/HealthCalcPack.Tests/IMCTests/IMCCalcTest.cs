@@ -28,6 +28,7 @@ namespace HealthCalcPack.Tests.IMCCalcTests
             IIMC imc = new IMC();
             double Height = 1.81;
             double Weight = 77;
+            // Real Value = 23.5
             double ExpectedResult = 50.2;
 
             // Methods
