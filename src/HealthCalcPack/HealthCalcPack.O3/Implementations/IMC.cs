@@ -73,9 +73,12 @@ namespace HealthCalcPack.O3.Implementations
         /// Don't know.
         /// </returns>
         /// <exception cref="System.NotImplementedException"></exception>
-        public double IsValidData(double Height, double Weight)
+        public bool IsValidData(double Height, double Weight)
         {
-            throw new NotImplementedException();
+            return Height < 3
+                   && Height > 0
+                   && Weight < 300
+                   && Weight > 0;
         }
     }
 }

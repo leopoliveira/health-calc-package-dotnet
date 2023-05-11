@@ -19,7 +19,7 @@
         /// <param name="Height">The height.</param>
         /// <param name="Weight">The weight.</param>
         /// <returns>Don't know.</returns>
-        double IsValidData(double Height, double Weight);
+        bool IsValidData(double Height, double Weight);
 
         /// <summary>
         /// Gets the imc category.
