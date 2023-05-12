@@ -11,106 +11,35 @@ namespace HealthCalcPack.Tests.IMCTests
 {
     public class IMCIsValidTest
     {
-        [Fact]
-        public void IMCIsValid_ValidValues_ValidResult()
+        [Theory]
+        [InlineData(1.8, 7.6)]
+        [InlineData(2, 290)]
+        public void IMCIsValid_ValidValues_ValidResult(double height, double weight)
         {
             // Arrange
             IIMC imc = new IMC();
-            double heigth = 1.8;
-            double weight = 76;
 
             // Methods
-            bool result = imc.IsValidData(heigth, weight);
+            bool result = imc.IsValidData(height, weight);
 
             // Test
             Assert.True(result);
         }
 
-        [Fact]
-        public void IMCIsValid_InvalidWeight1_InvalidResult()
+        [Theory]
+        [InlineData(1.8, 301)]
+        [InlineData(1.8, 0)]
+        [InlineData(1.8, -1)]
+        [InlineData(3.01, 108)]
+        [InlineData(0, 108)]
+        [InlineData(-1, 108)]
+        public void IMCIsValid_InvalidValues_InvalidResult(double height, double weight)
         {
             // Arrange
             IIMC imc = new IMC();
-            double heigth = 1.8;
-            double weight = 301;
 
             // Methods
-            bool result = imc.IsValidData(heigth, weight);
-
-            // Test
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IMCIsValid_InvalidWeight2_InvalidResult()
-        {
-            // Arrange
-            IIMC imc = new IMC();
-            double heigth = 1.8;
-            double weight = 0;
-
-            // Methods
-            bool result = imc.IsValidData(heigth, weight);
-
-            // Test
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IMCIsValid_InvalidWeight3_InvalidResult()
-        {
-            // Arrange
-            IIMC imc = new IMC();
-            double heigth = 1.8;
-            double weight = -1;
-
-            // Methods
-            bool result = imc.IsValidData(heigth, weight);
-
-            // Test
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IMCIsValid_InvalidHeight1_InvalidResult()
-        {
-            // Arrange
-            IIMC imc = new IMC();
-            double heigth = 3.01;
-            double weight = 108;
-
-            // Methods
-            bool result = imc.IsValidData(heigth, weight);
-
-            // Test
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IMCIsValid_InvalidHeight2_InvalidResult()
-        {
-            // Arrange
-            IIMC imc = new IMC();
-            double heigth = 0;
-            double weight = 108;
-
-            // Methods
-            bool result = imc.IsValidData(heigth, weight);
-
-            // Test
-            Assert.False(result);
-        }
-
-        [Fact]
-        public void IMCIsValid_InvalidHeight3_InvalidResult()
-        {
-            // Arrange
-            IIMC imc = new IMC();
-            double heigth = -1;
-            double weight = 108;
-
-            // Methods
-            bool result = imc.IsValidData(heigth, weight);
+            bool result = imc.IsValidData(height, weight);
 
             // Test
             Assert.False(result);
