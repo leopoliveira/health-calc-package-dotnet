@@ -21,3 +21,46 @@ HealthCalcPack is a comprehensive and powerful library that provides a range of 
 Leverage the capabilities of the HealthCalcPack library to enhance your health and fitness applications. With its versatile features, customization options, and extensive documentation, HealthCalcPack empowers developers to create robust and user-friendly software that promotes healthy lifestyles.
 
 *Note: The HealthCalcPack library is intended for informational and educational purposes only. It is recommended that users consult with healthcare professionals or certified nutritionists for personalized advice and recommendations regarding health, nutrition, and fitness goals.*
+
+#### Interfaces
+
+##### IIMC
+Interface to work with Height and Weight values.
+
+```csharp
+public interface IIMC
+{
+    /// <summary>
+    /// Calculates the imc.
+    /// </summary>
+    /// <param name="Height">The height.</param>
+    /// <param name="Weight">The weight.</param>
+    /// <returns>IMC calculated.</returns>
+    double CalcIMC(double Height, double Weight);
+
+    /// <summary>
+    /// Determines whether the specified height and weight are valid.
+    /// </summary>
+    /// <param name="Height">The height.</param>
+    /// <param name="Weight">The weight.</param>
+    /// <returns>Don't know.</returns>
+    bool IsValidData(double Height, double Weight);
+
+    /// <summary>
+    /// Gets the imc category.
+    /// </summary>
+    /// <param name="Imc">The imc.</param>
+    /// <returns>Return the IMC actual category.</returns>
+    string GetIMCCategory(double Imc);
+}
+
+public interface IMacroNutrientes
+{
+    /// <summary>
+    /// Gets the macronutrients based on weight and objective.
+    /// </summary>
+    /// <param name="weight">The weight.</param>
+    /// <param name="objective">The weight objective.</param>
+    /// <returns>MacroNutrientesObj containing macronutrient information.</returns>
+    MacroNutrientesObj GetMacroNutrientes(double weight, EnumWeightObjective objective);
+
