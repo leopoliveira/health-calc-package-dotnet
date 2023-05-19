@@ -4,6 +4,27 @@
     <TargetFramework>net7.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Title>BMI and Macronutrients Calculator</Title>
+    <Authors>leopoliveira</Authors>
+    <Description>HealthCalcPack is a comprehensive and powerful library that provides a range of essential calculations for health and nutrition-related applications. This versatile library simplifies the process of calculating vital metrics such as Body Mass Index (BMI) and macronutrient requirements, enabling developers to create robust health and fitness software with ease.</Description>
+    <PackageProjectUrl>https://github.com/leopoliveira/health-calc-package-dotnet</PackageProjectUrl>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/leopoliveira/health-calc-package-dotnet</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>BMI</PackageTags>
+    <PackageReleaseNotes>First release.</PackageReleaseNotes>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="..\..\..\docs\logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\..\..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
 
 </Project>
